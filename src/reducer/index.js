@@ -1,7 +1,3 @@
-import home from '@/reducer/home'
-import detail from '@/reducer/detail'
+import home from "@/reducer/home";
 
-export {
-  home,
-  detail,
-}
+export { home };
