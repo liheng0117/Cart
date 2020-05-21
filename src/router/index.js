@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import { Home } from "./assembly";
 
 export default class Router extends React.Component {
@@ -7,7 +7,8 @@ export default class Router extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route path="/" component={Home} />
+          <Route path="/home" component={Home} />
+          <Redirect to="/home" />
         </Switch>
       </BrowserRouter>
     );

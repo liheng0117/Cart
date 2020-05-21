@@ -1,5 +1,5 @@
-import Loadable from "../components/Loadable";
+import Loadable from "@@/Loadable";
 
-const Home = Loadable(() => import("../pages/home"));
+const Home = Loadable(() => import("@/pages/home"));
 
 export { Home };
