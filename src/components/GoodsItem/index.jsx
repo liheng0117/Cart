@@ -16,16 +16,16 @@ export default class GoodsItem extends Component {
             data.items.length === 7?data.items.map( (val, index) => {
               if( index === 0 ) {
                 return (                 
-                    <Link to={"/goods/:"+val} key={val.gid} className="goodsseven">
-                      <dl>
-                        <dd>{val.title}</dd>
-                        <dd>
-                          精品打折
-                          <span>{val.price}</span>
-                        </dd>
-                        <dt><img src={val.image} /></dt>                        
-                      </dl>
-                    </Link>                                               
+                  <Link to={"/goods/:"+val} key={val.gid} className="goodsseven">
+                    <dl>
+                      <dd>{val.title}</dd>
+                      <dd>
+                        精品打折
+                        <span>{val.price}</span>
+                      </dd>
+                      <dt><img src={val.image} /></dt>                        
+                    </dl>
+                  </Link>                                               
                 )
               } else if ( index === 1 || index === 2 ) {
                 return (
