@@ -1,4 +1,5 @@
 .comp-homehead {
+  z-index: 999;
   position: fixed;
   left: 0;
   top: 0;
@@ -7,6 +8,9 @@
   display: flex;
   align-items: center;
   color: #fff;
+  a{
+    color: #fff;
+  }
   div{
     &:nth-child(1),
     &:nth-child(3){
@@ -15,6 +19,9 @@
     }
     &:nth-child(1){
       font-size: 0.4rem;
+    }
+    &:nth-child(3){
+      font-size: 0.28rem;
     }
     &:nth-child(2){
       flex: 1;
@@ -27,6 +34,7 @@
       }
       input{
         width: 100%;
+        height: 0.52rem;
         background: #efefdf;
         box-sizing: border-box;
         padding: 0.05rem 0;
@@ -35,6 +43,7 @@
       }
       input::-webkit-input-placeholder{
         color: #fff;
+        font-size: 0.3rem;
         font-weight: bold;
       } 
     }

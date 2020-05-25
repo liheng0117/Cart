@@ -1,14 +1,20 @@
 const defaultState = {
-  name: 'home',
-  age: 20
+  bannerList: '',
+  navList: '',
+  goodsList: '',
+  recomList: ''
 }
 
-export default function home(state=defaultState,action){
-  switch(action.type){
-    case 'FETCH_HOME_NAME':
-      return {...state,name:action.payload}
-    case 'FETCH_HOME_AGE':
-      return {...state,age:action.payload}
+export default function home( state=defaultState, action ) {
+  switch (action.type) {
+    case 'GET_BANNERLIST':
+      return { ...state, bannerList: action.payload.data};
+    case 'GET_NAVLIST':
+      return { ...state, navList: action.payload.data};
+    case 'GET_GOODSLIST':
+      return { ...state, goodsList: action.payload.data};
+    case 'GET_RECOMLIST':
+      return { ...state, recomList: action.payload.data};
     default :
       return state
   }
