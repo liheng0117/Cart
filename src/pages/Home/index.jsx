@@ -6,6 +6,7 @@ import BannerSwiper from '@@/BannerSwiper'
 import HomeNav from '@@/HomeNav'
 import GoodsItem from '@@/GoodsItem'
 import Recom from '@@/Recom'
+import FootBar from '@@/FootBar'
 //请求相关数据的方法
 import { getBanner, getNav, getGoods, getRecom } from '@/actions/home'
 import './style.less';
@@ -64,6 +65,7 @@ class Home extends Component {
           }
           <Recom />
         </div>
+        <FootBar />
       </div>
     )
   }

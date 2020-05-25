@@ -1,0 +1,32 @@
+.comp-footbar{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1rem;
+  background: #fff;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  a.foot-bar{
+    flex: 1;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    dl{
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      i{
+        font-size: 0.4rem;
+      }
+    }
+  }
+  a.active{
+    color: red;
+    font-weight: bold;
+  }
+}
