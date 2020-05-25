@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./style.less";
 
-export default class Home extends Component {
+export default class Cart extends Component {
   render() {
     return (
-      <div className="home">
-        home
+      <div className="pages-cart">
+        Cart
       </div>
     )
   }
