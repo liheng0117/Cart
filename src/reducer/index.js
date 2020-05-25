@@ -1,3 +1,6 @@
 import home from "@/reducer/home";
-
-export { home };
+import login from "@/reducer/login";
+export { 
+  home,
+  login,
+};

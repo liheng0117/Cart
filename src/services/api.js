@@ -1,3 +1,4 @@
 export default {
-  hotWordsUrl:"http://vueshop.glbuys.com/api/home/public/hotwords?token=1ec949a15fb709370f"
+  hotWordsUrl:"http://vueshop.glbuys.com/api/home/public/hotwords?token=1ec949a15fb709370f",
+  login:"http://vueshop.glbuys.com/api/home/user/pwdlogin?token=1ec949a15fb709370f",
 }
