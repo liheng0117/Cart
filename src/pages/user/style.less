@@ -1,0 +1,134 @@
+.pages-user{
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  font-size: 0.24rem;
+  .user-main{
+    flex: 1;
+    overflow: auto;
+    background: #efefef;
+    .infobox{     
+      width: 100%;
+      height: 2.8rem;
+      background: red;
+      box-sizing: border-box;
+      padding-top: 1rem;
+      dl{
+        margin: 0;
+        box-sizing: border-box;
+        width: 100%;
+        height: 1.8rem;
+        padding: 0.3rem;
+        display: flex;
+        align-items: center;
+        dt{
+          width: 1.2rem;
+          height: 1.2rem;
+          background: #fff;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 0.6rem;
+        }
+        dd{
+          margin: 0;
+          flex: 1;
+          box-sizing: border-box;
+          padding-left: 0.5rem;
+          color: #fff;
+          p{
+            margin: 0;
+            box-sizing: border-box;
+            padding: 0.05rem 0;
+          }
+        }
+      }
+    }
+    .orderbox{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 0.2rem;
+      background: #fff;
+      border-bottom: 0.02rem solid lightgray;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      h3{
+        font-size: 0.3rem;
+        margin: 0;
+      }
+      h5{
+        font-size: 0.24rem;
+        margin: 0;
+      }
+    }
+    .tradebox{
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 0.2rem 0;
+      display: flex;
+      dl{
+        flex: 1;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        dt{
+          i{
+            font-size: 0.4rem;
+            color: red;
+          }
+        }
+      }
+    }
+    .managebox{
+      width: 100%;
+      margin-top: 0.3rem;
+      background: #fff;
+      margin-bottom: 0;
+      li{
+        width: 100%;
+        box-sizing: border-box;
+        padding: 0.15rem 0.2rem;
+        border-bottom: 0.02rem solid lightgray;
+        text-indent: 0.3rem;
+        font-size: 0.3rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        i{
+          font-size: 0.4rem;
+        }
+      }
+    }
+    .btnbox{
+      width: 100%;
+      background: #fff;
+      box-sizing: border-box;
+      padding: 0.3rem 0.2rem;
+      text-align: center;
+      button{
+        box-sizing: border-box;
+        padding: 0.15rem 1.5rem;
+        background: red;
+        border-radius: 0.1rem;        
+        font-weight: bold;
+        font-size: 0.3rem;
+        a{
+          color: #fff;
+        }
+      }
+    }
+  }
+  .user-main::-webkit-scrollbar{
+    display: none;
+  }
+}
