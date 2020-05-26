@@ -1,5 +1,6 @@
-import Loadable from "../components/Loadable";
+import Loadable from '@@/Loadable';
 
-const Home = Loadable(() => import("../pages/home"));
+const Search = Loadable(() => import('@/pages/search'));
+const SearchGoods = Loadable(() => import('@/pages/searchgoods'));
 
-export { Home };
+export { Search, SearchGoods };

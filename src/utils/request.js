@@ -24,7 +24,7 @@ axios.interceptors.response.use(response => {
 }, error => {
   switch (error.response.status) {
     case 404:
-      window.location.href = 'https://www.baidu.com'
+      //window.location.href = 'https://www.baidu.com'
       break;
     
     default:
