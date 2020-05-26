@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import './style.less'
 
 export default class GoodsItem extends Component {
+
   render() {
     const { data } = this.props;
     // console.log(data)
