@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { LeftOutlined } from '@ant-design/icons';
 import {withRouter} from 'react-router-dom'
 import "./style.less";
 
@@ -12,7 +11,6 @@ import "./style.less";
     return (
       <div className="header">
         <div className="header_Left" onClick={ () => this.back()}>
-        <LeftOutlined />
         </div>
       <div className="header_Center">{title}</div>
         <div className="header_Right"></div>
