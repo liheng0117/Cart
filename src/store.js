@@ -5,7 +5,11 @@ import { persistReducer } from "redux-persist"; // 合并 reduce
 import storage from "redux-persist/lib/storage"; // 创建 store
 // 多层对象 做数据持久化
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+<<<<<<< HEAD
 import { search } from "@/reducer";
+=======
+import { home, login, reg } from "@/reducer";
+>>>>>>> szs
 
 // 我要对哪些 reduce 的 state 做数据持久化
 const rootPersistConfig = {
@@ -21,7 +25,13 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const myPersistReducer = persistReducer(
   rootPersistConfig,
   combineReducers({
+<<<<<<< HEAD
     search,
+=======
+    home,
+    login,
+    reg,
+>>>>>>> szs
   })
 );
 
