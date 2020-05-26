@@ -55,7 +55,8 @@ class index extends Component {
               )}
             </Form.Item>
             <div id='pawd'>
-              <Form.Item className="pawdLeft">
+              <p className="pawdLeft">
+              <Form.Item >
                 {getFieldDecorator('pwd')(
                   <Input
                     type={ inpType ? 'password' : 'input' }
@@ -63,7 +64,9 @@ class index extends Component {
                   />,
                   )}
               </Form.Item>
-              <p>
+              </p>
+              
+              <p className="pwdRight">
                 <Switch defaultChecked={false} 
                 onClick={ () => this.changeClick()} 
                 className='pawdReft'/>
