@@ -29,22 +29,76 @@ class Cart extends Component {
   computeAllFn = () => {
     let allPrice = 0;
     let allCheck = false;
+    const { cartList } = this.state;
+    allCheck = cartList.every( val => val.checked )
+    cartList.forEach( val => {
+      if ( val.checked ) {
+        allPrice += val.amount*val.price
+      }     
+    });
+    this.setState({
+      allPrice: allPrice,
+      allCheck: allCheck
+    })
   }
   //单选改变选中状态
   changeFn1 = (index) => {
-
+    let arr = this.state.cartList;
+    arr[index].checked = !arr[index].checked
+    this.setState({
+      cartList: arr
+    })
+    this.computeAllFn()
   }
   //全选改变选中状态
-  changeFn2 = () => {
-
+  changeFn2 = (myCheck) => {
+    let arr = this.state.cartList;
+    arr.forEach( val => {
+      val.checked =  myCheck   
+    });
+    this.setState({
+      cartList: arr
+    })
+    this.computeAllFn()
   }
   //添加数量
   addNumFn = (index) => {
-
+    let arr = this.state.cartList;
+    arr.forEach( (val, i) => {
+      if( i === index ) {
+        val.amount = val.amount*1+1
+      } 
+    });
+    this.setState({
+      cartList: arr
+    })
+    this.computeAllFn()
   }
   //减少数量
   minusNumFn = (index) => {
-
+    let arr = this.state.cartList;
+    arr.forEach( (val, i) => {
+      if( i === index && val.amount > 1 ) {
+        val.amount = val.amount*1-1
+      } 
+    });
+    this.setState({
+      cartList: arr
+    })
+    this.computeAllFn()
+  }
+  //结算
+  toPayFn = () => {
+    if( !localStorage.getItem('token') ) {
+      this.props.history.push('/login')
+    } else {
+      
+    }
+  }
+  //切换页面时把修改后的数据重新给到redux
+  componentWillUnmount () {
+    const { setCart } = this.props;
+    setCart(this.state)
   }
 
   render() {
@@ -79,9 +133,9 @@ class Cart extends Component {
                     <p>
                       <span>{'￥'+val.price}</span>
                       <span>
-                        <i onClick={()=>this.addNumFn(index)}>-</i>
+                        <i onClick={()=>this.minusNumFn(index)}>-</i>
                         <i>{val.amount}</i>
-                        <i onClick={()=>this.minusNumFn(index)}>+</i>
+                        <i onClick={()=>this.addNumFn(index)}>+</i>
                       </span>
                     </p>
                   </dd>
@@ -92,13 +146,13 @@ class Cart extends Component {
         </div>
         <div className="cart-foot">
           <p>
-            <input type="checkbox" checked={allCheck} onChange={this.changeFn2} />
+            <input type="checkbox" checked={allCheck} onChange={()=>this.changeFn2(!allCheck)} />
             全选
           </p>
           <p>
             合计:
             <span>{' ￥'+allPrice}</span>
-            <button>去结算</button>
+            <button onClick={this.toPayFn}>去结算</button>
           </p>
         </div>
       </div>

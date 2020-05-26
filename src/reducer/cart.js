@@ -57,6 +57,7 @@ export default function cart ( state=defaultState, action ) {
   switch (action.type) {
     //离开购物车页面是存储数据
     case 'SET_CART_DATA':
+      // console.log(action.payload)
       return action.payload;
     //添加购物车数据
     case 'ADD_CART_DATA':
