@@ -6,6 +6,8 @@ import { store } from "./store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/lib/integration/react";
 import "./index.less";
+import '@/utils/reset.css'
+import '@/utils/rem'
 
 ReactDOM.render(
   <Provider store={store}>

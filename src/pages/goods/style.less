@@ -1,0 +1,47 @@
+#root{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.24rem;
+}
+.goods{
+    width: 100%;
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    header{
+        width: 100%;
+        height:1.2rem;
+        display: flex;
+        align-items: center;
+        padding: 0 0.2rem;
+        box-sizing: border-box;
+        .goodsheadleft{
+            width: 0.8rem;
+        }
+        .goodsheadmid{
+            flex: 1;
+            display: flex;
+            justify-content: space-around;
+            font-size: 0.3rem;
+            a{
+                color: black;
+            }
+            .active{
+                padding-bottom: 0.1rem;
+                box-sizing: border-box;
+                border-bottom:1px solid #fda208;
+                color: black;
+            }
+        }
+        .goodsheadright{
+            width: 0.8rem;
+        }
+    }
+    img{
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+}

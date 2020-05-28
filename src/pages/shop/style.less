@@ -1,0 +1,221 @@
+section{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom:1.5rem;
+    box-sizing: border-box;
+    overflow: auto;
+    .swiper-container{
+        width: 100%;
+        height: 5rem;
+        padding-bottom:5rem;
+        box-sizing: border-box; 
+        .swiper-wrapper{
+            width: 100%;
+            height: 5rem;
+        }
+    }
+    .title{
+        width: 100%;
+        padding: 0.2rem 0.2rem;
+        box-sizing: border-box;
+    }
+    .price{
+        width: 100%;
+        padding: 0.05rem 0.2rem;
+        box-sizing: border-box;
+        color: red;
+    }
+    .freight{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.05rem 0.2rem;
+        box-sizing: border-box;
+        color: #969696;
+    }
+    .commet{
+        width: 100%;
+        background: transparent;
+        padding-top: 1rem;
+        box-sizing: border-box;
+        background: #efefef;
+        .commet-head{
+          background: white;
+          padding: 0.05rem 0.2rem;
+          box-sizing: border-box;
+          font-size: 0.28rem;
+        }
+        .commet_detail{
+            background: white;
+            padding-top:0.2rem;
+            box-sizing: border-box;
+        }
+        .commet-cmmit{
+            padding: 0rem 0.2rem;
+          box-sizing: border-box;
+          background: white;
+          padding-bottom: 0.2rem;
+        }
+        .commet-Top{
+            width: 100%;
+            display: flex;
+            align-items: center;
+            .commet-img>img{
+                width:0.8rem;
+                height: 0.8rem;
+                display: block;
+                border-radius:50%;
+                margin-right: 0.2rem;
+            }
+        }
+        .commet-content{
+            padding: 0.05rem 0;
+            box-sizing: border-box;
+        }
+        
+    }
+    .Btn{
+        width: 100%;
+        height: 1.2rem;
+        position: fixed;
+        bottom: 0;
+        background: red;
+        display: flex;
+        button{
+            flex: 1;
+            outline: none;
+            border: none;
+        }
+        .collect{
+            background: #fcb40a;
+            color: white;
+        }
+        .join{
+            background:red;
+            color: white;
+        }
+
+    }
+    .mask{
+        position: absolute;
+        z-index: 100000;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,.3);
+        left: 0;
+        top: 0;
+        color: #323232;
+        .mask-box{
+            width:100%;
+            height: 7rem;
+            background: white;
+            position: absolute;
+            bottom: 0;
+            dl{
+                width: 100%;
+                display: flex;
+                padding: 0.1rem 0.2rem;
+                box-sizing: border-box;
+                border-bottom: 1px solid black;
+
+                dt{
+                    width: 1rem;
+                }
+                dd{
+                    flex: 1;
+                    padding-left: 0.2rem;
+                    box-sizing: border-box;
+                   .shop-price{
+                       color: red;
+                   }
+                }
+            }
+            .shop-coloe{
+                padding: 0.1rem 0.2rem;
+                box-sizing:border-box;
+                p{
+                    font-size:0.28rem;
+                    
+                }
+                div{
+                    margin-top: 0.15rem;
+                    span{
+                        background: #EFEFEF;
+                        padding: 0.05rem 0.2rem;
+                        box-sizing: border-box;
+                        font-size: 0.28rem;
+                        border-radius: 3px;
+                        margin-bottom: 0.4rem;
+                        margin-right: 10px;
+                    }
+                    .tinct{
+                        background: #FDA208;
+                        color: #FFFFFF;
+                    }
+                }
+                
+            }
+            .shop-size{
+                padding: 0.1rem 0.2rem;
+                box-sizing:border-box;
+                p{
+                    font-size:0.28rem;
+                }
+                div{
+                    margin-top: 0.15rem;
+                    span{
+                        background: #EFEFEF;
+                        padding: 0.05rem 0.2rem;
+                        box-sizing: border-box;
+                        font-size: 0.28rem;
+                        border-radius: 3px;
+                        margin-bottom: 0.4rem;
+                        margin-right: 10px;
+                    }
+                    .on{
+                        background: #FDA208;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+            .shop-buy{
+                width: 100%;
+                display: flex;
+                padding: 0.15rem 0.2rem;
+                box-sizing: border-box;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 0.28rem;
+                .shop-emendation{
+                    padding: 0.1rem 0.2rem;
+                    box-sizing: border-box;
+                    border: 0.02rem solid black;
+                    border-radius: 0.15rem;
+                    span{
+                        padding: 0 0.2rem;
+                        box-sizing: border-box;
+                    }
+                }
+            }
+            button{
+                width: 100%;
+                height: 1rem;
+                background: #CF0005;
+                position: fixed;
+                z-index: 13;
+                bottom: 0px;
+                font-size: 0.28rem;
+                color: #FFFFFF;
+                text-align: center;
+                line-height: 1rem;
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}
+section::-webkit-scrollbar{
+    display: none
+}
