@@ -16,16 +16,8 @@
 	win.addEventListener(resizeEvt, recalc, false);
 
 	doc.addEventListener('DOMContentLoaded', recalc, false);
-<<<<<<< HEAD
 	/*DOMContentLoaded文档加载完成不包含图片资源 onload包含图片资源*/
 })(document, window);
 
 
-/*
 
-var iWidth=document.documentElement.clientWidth  //getBoundingClientRect().width;
- iWidth=iWidth>640?640:iWidth;
- document.getElementsByTagName("html")[0].style.fontSize=iWidth/6.4+"px";*/
-=======
-})(document, window);
->>>>>>> cpf

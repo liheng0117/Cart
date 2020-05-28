@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> 8aeb350925f55f568a033955d71cc43966b86e79
 import React from 'react';
 import ReactDOM from 'react-dom'; //  前端渲染页面
 import { Provider } from 'react-redux';
@@ -9,27 +5,11 @@ import Router from './router';
 import { store } from './store';
 import { persistStore } from 'redux-persist';
 import { PersistGate } from 'redux-persist/lib/integration/react';
-<<<<<<< HEAD
-import './index.less';
 import '@/styles/reset.css';
 import '@/styles/rem'
-=======
 import './utils/rem'
 import './styles/index.less';
 import './styles/reset.css'
-=======
-import React from "react";
-import ReactDOM from "react-dom"; //  前端渲染页面
-import { Provider } from "react-redux";
-import Router from "./router";
-import { store } from "./store";
-import { persistStore } from "redux-persist";
-import { PersistGate } from "redux-persist/lib/integration/react";
-import "./index.less";
-import '@/utils/reset.css'
-import '@/utils/rem'
->>>>>>> cpf
->>>>>>> 8aeb350925f55f568a033955d71cc43966b86e79
 
 ReactDOM.render(
   <Provider store={store}>

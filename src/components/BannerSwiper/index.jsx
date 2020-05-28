@@ -26,7 +26,6 @@ class BannerSwiper extends Component {
       },
     })
   }
-
   componentDidMount () {    
     this.swiperFn()    
   }
@@ -46,7 +45,7 @@ class BannerSwiper extends Component {
                 bannerList?bannerList.map( (val, index) => {
                   return (
                     <div className="swiper-slide" key={index}>
-                      <img src={val.image} />
+                      <img src={val.image} alt="" />
                     </div>
                   )
                 }):null

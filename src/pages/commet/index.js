@@ -27,7 +27,7 @@ export default class index extends Component {
                 commet?commet.map((v,i)=>{
                     return (
                         <div key={i} className='commet-cmmit' >
-                        <div className='commet-Top'><p className='commet-img'><img src={v.head} /></p>{v.nickname}</div>
+                        <div className='commet-Top'><p className='commet-img'><img src={v.head} alt="" /></p>{v.nickname}</div>
                         <div className='commet-content'>{v.content}</div>
                         <div>{v.times}</div>
                         </div>

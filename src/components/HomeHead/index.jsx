@@ -7,7 +7,7 @@ export default class HomeHead extends Component {
   render() {
     const { headClassName } = this.props;
     return (
-      <div className={"comp-homehead"+" "+headClassName}>
+      <div className={`comp-homehead ${headClassName}`}>
         <div><Link to="/fenlei"><Icon type="bars" /></Link></div>
         <div>          
           <Icon type="search" />

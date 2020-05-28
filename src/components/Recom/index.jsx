@@ -23,7 +23,7 @@ class Recom extends Component {
               return (
                 <Link to={"/goods/:"+val} key={val.gid}>
                   <dl>
-                    <dt><img src={val.image} /></dt>
+                    <dt><img src={val.image} alt="" /></dt>
                     <dd>{val.title}</dd>
                     <dd>{'￥'+val.price}</dd>
                   </dl>

@@ -24,7 +24,7 @@ export default class GoodsItem extends Component {
                         精品打折
                         <span>{val.price}</span>
                       </dd>
-                      <dt><img src={val.image} /></dt>                        
+                      <dt><img src={val.image} alt="" /></dt>                        
                     </dl>
                   </Link>                                               
                 )
@@ -36,7 +36,7 @@ export default class GoodsItem extends Component {
                         <span>{val.title}</span>
                         <span>品质精选</span>
                       </dd>
-                      <dt><img src={val.image} /></dt>                        
+                      <dt><img src={val.image} alt="" /></dt>                        
                     </dl>
                   </Link>                                                                               
                 )
@@ -45,7 +45,7 @@ export default class GoodsItem extends Component {
                   <Link to={"/goods/:"+val} key={val.gid} className="goodsseven">
                     <dl>
                       <dd>{val.title}</dd>
-                      <dt><img src={val.image} /></dt> 
+                      <dt><img src={val.image} alt="" /></dt> 
                       <dd>{'￥'+val.price}</dd>
                       <dd>{'￥'+(val.price+100)}</dd>                       
                     </dl>
@@ -61,7 +61,7 @@ export default class GoodsItem extends Component {
                         <dd>
                           火爆开售
                         </dd>
-                        <dt><img src={val.image} /></dt>                        
+                        <dt><img src={val.image} alt="" /></dt>                        
                       </dl>
                     </Link>                                               
                 )
@@ -70,7 +70,7 @@ export default class GoodsItem extends Component {
                   <Link to={"/goods/:"+val} key={val.gid} className="goodssix">
                     <dl>
                       <dd>{val.title}</dd>
-                      <dt><img src={val.image} /></dt> 
+                      <dt><img src={val.image} alt="" /></dt> 
                       <dd>{'￥'+val.price}</dd>
                       <dd>{'￥'+(val.price+100)}</dd>                       
                     </dl>

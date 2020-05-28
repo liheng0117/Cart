@@ -116,7 +116,7 @@ class Cart extends Component {
                     <input type="checkbox" checked={val.checked} onChange={()=>this.changeFn1(index)} />
                   </dt>
                   <dd>
-                    <p><img src={val.img} /></p>
+                    <p><img src={val.img} alt="" /></p>
                     <p>删除</p>
                   </dd>
                   <dd>

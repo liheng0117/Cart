@@ -22,7 +22,7 @@ class HomeNav extends Component {
             return (
               <Link to={'/fenlei/:'+val.cid} key={val.cid}>
                 <dl>
-                  <dt><img src={val.image} /></dt>
+                  <dt><img src={val.image} alt="" /></dt>
                   <dd>{val.title}</dd>
                 </dl>
               </Link>              
