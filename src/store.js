@@ -5,7 +5,11 @@ import { persistReducer } from "redux-persist"; // 合并 reduce
 import storage from "redux-persist/lib/storage"; // 创建 store
 // 多层对象 做数据持久化
 import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+<<<<<<< HEAD
 import { home, cart } from "@/reducer";
+=======
+import { login, reg, search } from "@/reducer";
+>>>>>>> 8aeb350925f55f568a033955d71cc43966b86e79
 
 // 我要对哪些 reduce 的 state 做数据持久化
 const rootPersistConfig = {
@@ -13,7 +17,11 @@ const rootPersistConfig = {
   storage,
   stateReconciler: autoMergeLevel2,
   // 白名单 [reducer 目录内的 reduce 文件名]
+<<<<<<< HEAD
   whitelist: ["cart"],
+=======
+  whitelist: [""],
+>>>>>>> 8aeb350925f55f568a033955d71cc43966b86e79
 };
 //  安装redux谷歌插件
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -21,8 +29,14 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const myPersistReducer = persistReducer(
   rootPersistConfig,
   combineReducers({
+<<<<<<< HEAD
     home,
     cart
+=======
+    search,
+    login,
+    reg,
+>>>>>>> 8aeb350925f55f568a033955d71cc43966b86e79
   })
 );
 
