@@ -10,21 +10,8 @@ const defaultState = {
       'img': '//vueshop.glbuys.com/uploadfiles/1524556409.jpg',
       'checked': false,
       'freight': 20,
-      'attrs': [{
-        'attrid': '1034',
-        'title': '颜色',
-        'param': [{
-          'paramid': '1378',
-          'title': '白色'
-        }]
-      }, {
-        'attrid': '1037',
-        'title': '尺码',
-        'param': [{
-          'paramid': '1384',
-          'title': '38'
-        }]
-      }]
+      'color': '白色',
+      'size': '38'
     },
     {
       'gid': '143208072',
@@ -34,21 +21,8 @@ const defaultState = {
       'img': '//vueshop.glbuys.com/uploadfiles/1524556409.jpg',
       'checked': false,
       'freight': 20,
-      'attrs': [{
-        'attrid': '1034',
-        'title': '颜色',
-        'param': [{
-          'paramid': '1378',
-          'title': '白色'
-        }]
-      }, {
-        'attrid': '1037',
-        'title': '尺码',
-        'param': [{
-          'paramid': '1384',
-          'title': '38'
-        }]
-      }]
+      'color': '蓝色',
+      'size': '39'
     }
   ]
 }

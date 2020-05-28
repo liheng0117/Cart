@@ -122,13 +122,8 @@ class Cart extends Component {
                   <dd>
                     <p>{val.title}</p>
                     <p>
-                      {
-                        val.attrs.map( v => {
-                          return (
-                            <span key={v.attrid}>{v.title+": "+v.param[0].title}</span>
-                          )
-                        })
-                      }
+                      <span>{'颜色: '+val.color}</span>
+                      <span>{'尺寸: '+val.size}</span>
                     </p>
                     <p>
                       <span>{'￥'+val.price}</span>
