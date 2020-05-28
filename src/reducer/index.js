@@ -1,3 +1,9 @@
-import home from "@/reducer/home";
+import search from '@/reducer/search';
+import login from "@/reducer/login";
+import reg from "@/reducer/reg";
 
-export { home };
+export { 
+  login,
+  reg,
+  search
+};

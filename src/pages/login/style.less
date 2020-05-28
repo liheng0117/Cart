@@ -1,0 +1,68 @@
+.login{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.24rem;
+  .header_Left , .header_Right{
+    width:0.7rem;
+    height: 0.8rem;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.8rem;
+  }
+  .header_Center{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.3rem;
+  }
+  section{
+    flex: 1;
+    overflow: auto;
+    padding:0 0.3rem;
+    box-sizing: border-box;
+    button{
+      margin-top: 0.5rem;
+    }
+    .ant-form-item-children input{
+      border: none;
+      outline: none;
+    }
+    #pawd{
+      width: 100%;
+      height: 0.8rem;
+      display: flex;
+      align-items: center;
+      .pawdLeft{
+        height: 100%;
+        flex: 1;
+        input{
+          margin-top: 0.24rem;
+          outline: none;
+        }
+      }
+      .pwdRight{
+        width: 20%;
+        height: 0.8rem;
+        margin-bottom: 0.6rem;
+      }
+    }
+    .ant-switch-checked{
+      background: red;
+    }
+    .foot{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+  }
+  section::-webkit-scroll{
+    display: none;
+  }
+  .login-form-button{
+    width: 100%;
+  }
+}

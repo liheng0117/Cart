@@ -16,9 +16,6 @@
 	win.addEventListener(resizeEvt, recalc, false);
 
 	doc.addEventListener('DOMContentLoaded', recalc, false);
-<<<<<<< HEAD
-})(document, window);
-=======
 	/*DOMContentLoaded文档加载完成不包含图片资源 onload包含图片资源*/
 })(document, window);
 
@@ -28,4 +25,3 @@
 var iWidth=document.documentElement.clientWidth  //getBoundingClientRect().width;
  iWidth=iWidth>640?640:iWidth;
  document.getElementsByTagName("html")[0].style.fontSize=iWidth/6.4+"px";*/
->>>>>>> 13b7d95a36abc78e9d7d1f732742692d338d8ede
