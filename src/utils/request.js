@@ -44,7 +44,7 @@ export function post (url, data) {
       // headers: { token: '3333333333333' },
       data: qs.stringify(data),
     })
-      .then(res => resolve(res.data))
+      .then(res => resolve(res))
       .catch(err => console.log(err))
   })
 }

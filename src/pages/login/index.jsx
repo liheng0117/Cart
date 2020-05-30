@@ -1,33 +1,25 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux'
 import { Form, Input, Button, Switch} from 'antd';
-import { isLogin } from '@/actions/login'
+import api from '@/services/api'
+import { post } from '@/utils/request'
 import Logintit from '@@/Logintit'
+
 import "./style.less";
 
-export default @connect( state => {
-  return {
-    islogin:state.login.islogin
-  }
-},{
-  isLogin,
-} )
-
-@Form.create()
+export default @Form.create()
 class index extends Component {
   state={
     inpType:true,
+    islog:this.props.islogin
   }
   handleSubmit = e => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
-      let obj={}
-      obj['cellphone'] = values.username
-      obj['password'] = values.pwd
-      this.props.isLogin(obj)
-      if (this.props.islogin) {
-        this.props.history.push('/reg')
-      }
+      post(api.login, values).then(res => {
+        if (res.data.code===200) {
+          this.props.history.push('/reg')
+        }
+      }) 
     });
   };
   changeClick = () => {
@@ -48,7 +40,7 @@ class index extends Component {
         <section>
           <Form onSubmit={this.handleSubmit} className="login-form">
             <Form.Item>
-              {getFieldDecorator('username')(
+              {getFieldDecorator('cellphone')(
                 <Input
                   placeholder="手机号"
                 />,
@@ -56,14 +48,14 @@ class index extends Component {
             </Form.Item>
             <div id='pawd'>
               <Form.Item className="pawdLeft">
-                {getFieldDecorator('pwd')(
+                {getFieldDecorator('password')(
                   <Input
                     type={ inpType ? 'password' : 'input' }
                     placeholder="密码"
                   />,
                   )}
               </Form.Item>
-              <p>
+              <p className="pwdRight">
                 <Switch defaultChecked={false} 
                 onClick={ () => this.changeClick()} 
                 className='pawdReft'/>

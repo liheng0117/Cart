@@ -1,0 +1,100 @@
+.login{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.24rem;
+  .header_Left , .header_Right{
+    width:0.7rem;
+    height: 0.8rem;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.8rem;
+  }
+  .header_Center{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.3rem;
+  }
+  section{
+    flex: 1;
+    overflow: auto;
+    padding:0 0.3rem;
+    box-sizing: border-box;
+    .ant-form-item-children input{
+      border: none;
+      outline: none;
+    }
+    .ant-switch-checked{
+      background: red;
+    }
+    .code{
+      width: 100%;
+      display: flex;
+      height: 0.64rem;
+      .code_left{
+        flex: 1;
+        height: 100%;
+      }
+      .code_right{
+        width: 1.2rem;
+        height: 100%;
+      }
+    }
+    .pwd{
+      width: 100%;
+      display: flex;
+      height: 0.64rem;
+      margin-top: 0.2rem;
+      margin-bottom: 0.8rem;
+      align-items: center;
+      .pwd_left{
+        flex: 1;
+        height: 100%;
+        
+      }
+      .pwd_right{
+        width: 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+      }
+      button{
+        margin-top: 0 !important;
+      }
+      p{
+        margin: 0.2rem 0;
+      }
+      
+    }
+    .mesg{
+      width: 100%;
+      display: flex;
+      margin-top: 0.2rem;
+      height: 0.8rem;
+      .mesg_left{
+        flex: 1;
+      }
+      .mesg_right p{
+        line-height: 0.8rem;
+        margin: 0;
+        padding: 0 0.1rem;
+        box-sizing: border-box;
+      }
+    }
+    
+    .ant-form-item{
+      margin-bottom: 0 !important;
+    }
+
+
+  }
+  section::-webkit-scroll{
+    display: none;
+  }
+  .login-form-button{
+    width: 100%;
+  }
+}

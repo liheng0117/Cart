@@ -1,10 +1,12 @@
 import Loadable from "../components/Loadable";
 
-const Home = Loadable(() => import("@/pages/home"));
 const Login = Loadable(() => import("@/pages/login"));
 const Reg = Loadable(() => import("@/pages/reg"));
+const Classification = Loadable(() => import("@/pages/classification"));
+const Classgoods = Loadable(() => import("@/pages/classgoods"));
 export { 
-  Home,
   Login,
   Reg,
+  Classification,
+  Classgoods,
 };

@@ -5,6 +5,7 @@ import Router from "./router";
 import { store } from "./store";
 import { persistStore } from "redux-persist";
 import { PersistGate } from "redux-persist/lib/integration/react";
+import '@/utils/rem'
 import "./index.less";
 
 ReactDOM.render(

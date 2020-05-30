@@ -1,6 +1,9 @@
-import home from "@/reducer/home";
 import login from "@/reducer/login";
+import reg from "@/reducer/reg";
+import classcation from "@/reducer/classcation";
 export { 
-  home,
   login,
+  reg,
+  classcation,
 };
+
