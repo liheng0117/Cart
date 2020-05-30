@@ -1,64 +1,40 @@
-import React, { Component } from "react"
-import axios from "axios"
-import api from "../../services/api"
-import Swiper from "swiper"
-import { Message } from "antd"
-import "swiper/js/swiper.js"
-import "swiper/css/swiper.css"
-import "./style.less"
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { getsize } from '@/actions/size'
+import { getcommet } from '@/actions/commet'
+import { getdetail } from '@/actions/shop'
+import { addCart } from '@/actions/cart'
+import { Message } from 'antd'
+import 'swiper/js/swiper.js'
+import 'swiper/css/swiper.css'
+import './style.less'
+
+export default
+@connect(
+  (state) => {
+    return {
+      detail: state.shop,
+      commet: state.commet,
+      size: state.size,
+    }
+  },
+  {
+    getdetail,
+    getcommet,
+    getsize,
+    addCart,
+  }
+)
 class index extends Component {
   state = {
-    img: [], //轮播图片
-    title: "", //名称
-    price: "", //价格
-    freight: "", //邮费
-    sales: "", //月销量
-    commet: [],
-    visable: true,
-    color: [],
-    size: [],
     num: 1,
+    visable: true,
   }
   componentDidMount() {
-    axios.get(api.detatil).then((res) => {
-      console.log(res)
-      this.setState(
-        {
-          img: res.data.data.images,
-          title: res.data.data.title,
-          price: res.data.data.price,
-          freight: res.data.data.freight,
-          sales: res.data.data.sales,
-        },
-        () => {
-          new Swiper(".swiper-container", {
-            loop: true, // 循环模式选项
-            autoplay: true,
-            // 如果需要分页器
-            pagination: {
-              el: ".swiper-pagination",
-            },
-
-            // 如果需要前进后退按钮
-            navigation: {
-              nextEl: ".swiper-button-next",
-              prevEl: ".swiper-button-prev",
-            },
-          })
-        }
-      )
-    })
-    axios.get(api.commet).then((nbb) => {
-      this.setState({
-        commet: nbb.data.data,
-      })
-    })
-    axios.get(api.size).then((res) => {
-      this.setState({
-        color: res.data.data[0].values,
-        size: res.data.data[1].values,
-      })
-    })
+    var gid = this.props.match.params.gid
+    this.props.getdetail(gid)
+    this.props.getcommet(gid)
+    this.props.getsize(gid)
   }
   handlmask = () => {
     const { visable } = this.state
@@ -67,25 +43,30 @@ class index extends Component {
     })
   }
   affirm = () => {
-    const { title, price, freight, num, img } = this.state
+    var gid = this.props.match.params.gid
+    const { num } = this.state
+    const { images, title, price, freight } = this.props.detail
     this.setState({
       visable: true,
     })
-    var size = document.getElementsByClassName("on")[0]
-    var color = document.getElementsByClassName("tinct")[0]
+    var size = document.getElementsByClassName('on')[0]
+    var color = document.getElementsByClassName('tinct')[0]
     if (size && color) {
       var obj = {
+        gid,
         title,
-        img,
+        images,
         price,
         freight,
-        num,
+        amount: num,
+        checked: false,
         color: color.innerHTML,
         size: size.innerHTML,
       }
-      console.log(obj);
+      this.props.addCart(obj)
+      Message.info('成功加入购物车')
     } else {
-      Message.info("请选择颜色或尺寸")
+      Message.info('请选择颜色或尺寸')
     }
   }
   add = () => {
@@ -103,41 +84,34 @@ class index extends Component {
     }
   }
   colorclick = (index) => {
-    var arr = Array.from(document.getElementsByClassName("shop-color-arr"))
+    var arr = Array.from(document.getElementsByClassName('shop-color-arr'))
 
     for (let i = 0; i < arr.length; i++) {
-      arr[i].classList.remove("tinct")
+      arr[i].classList.remove('tinct')
     }
-    arr[index].classList.add("tinct")
+    arr[index].classList.add('tinct')
   }
   sizeclick = (index) => {
-    var arr = Array.from(document.getElementsByClassName("shop-color-brr"))
+    var arr = Array.from(document.getElementsByClassName('shop-color-brr'))
 
     for (let i = 0; i < arr.length; i++) {
-      arr[i].classList.remove("on")
+      arr[i].classList.remove('on')
     }
-    arr[index].classList.add("on")
+    arr[index].classList.add('on')
   }
   render() {
-    const {
-      img,
-      title,
-      price,
-      freight,
-      sales,
-      commet,
-      visable,
-      size,
-      color,
-      num,
-    } = this.state
-    console.log(commet, 5555)
+    const { images, title, price, freight, sales } = this.props.detail
+    const { visable } = this.state
+    const { commet } = this.props
+    const { num } = this.state
+
+    const { size, color } = this.props.size
     return (
       <section>
         <div className="swiper-container">
           <div className="swiper-wrapper">
-            {img
-              ? img.map((v, i) => {
+            {images
+              ? images.map((v, i) => {
                   return (
                     <div key={i} className="swiper-slide">
                       <img src={v} alt="" />
@@ -155,9 +129,11 @@ class index extends Component {
           <div>月销量:{sales}件</div>
         </div>
         <div className="commet">
-          <div className="commet-head">商品评价({commet.length})</div>
+          <div className="commet-head">
+            商品评价({commet instanceof Array ? commet.length : 0})
+          </div>
           <div className="commet_detail">
-            {commet
+            {commet instanceof Array
               ? commet.map((v, i) => {
                   return (
                     <div key={i} className="commet-cmmit">
@@ -185,7 +161,7 @@ class index extends Component {
           <div className="mask-box">
             <dl className="shop-detail">
               <dt>
-                <img src={img[0]} alt="" />
+                <img src={images ? images[0] : null} alt="" />
               </dt>
               <dd>
                 <p>{title}</p>
@@ -195,33 +171,37 @@ class index extends Component {
             <div className="shop-coloe">
               <p>颜色</p>
               <div>
-                {color.map((v, i) => {
-                  return (
-                    <span
-                      className="shop-color-arr"
-                      key={i}
-                      onClick={() => this.colorclick(i)}
-                    >
-                      {v.value}
-                    </span>
-                  )
-                })}
+                {color instanceof Array
+                  ? color.map((v, i) => {
+                      return (
+                        <span
+                          className="shop-color-arr"
+                          key={i}
+                          onClick={() => this.colorclick(i)}
+                        >
+                          {v.value}
+                        </span>
+                      )
+                    })
+                  : null}
               </div>
             </div>
             <div className="shop-size">
               <p>尺码</p>
               <div>
-                {size.map((v, i) => {
-                  return (
-                    <span
-                      className="shop-color-brr"
-                      key={i}
-                      onClick={() => this.sizeclick(i)}
-                    >
-                      {v.value}
-                    </span>
-                  )
-                })}
+                {size instanceof Array
+                  ? size.map((v, i) => {
+                      return (
+                        <span
+                          className="shop-color-brr"
+                          key={i}
+                          onClick={() => this.sizeclick(i)}
+                        >
+                          {v.value}
+                        </span>
+                      )
+                    })
+                  : null}
               </div>
             </div>
             <div className="shop-buy">
@@ -239,5 +219,3 @@ class index extends Component {
     )
   }
 }
-
-export default index

@@ -20,7 +20,7 @@ class HomeNav extends Component {
         {
           navList?navList.map( val => {
             return (
-              <Link to={'/fenlei/:'+val.cid} key={val.cid}>
+              <Link to={'/fenlei/'+val.cid} key={val.cid}>
                 <dl>
                   <dt><img src={val.image} alt="" /></dt>
                   <dd>{val.title}</dd>

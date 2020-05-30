@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { getSearchData, getTypeshData, getFilterData } from '@/actions/search'
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 import { Icon } from 'antd'
 import qs from 'qs'
 import './style.less'
 
-export default 
+export default
 @connect(
   (state) => {
     return {
@@ -26,12 +26,12 @@ class SearchGoods extends Component {
     currentIndex: 0,
     priceIndex: 0,
     filterpriceData: [
-      "1-100",
-      "100-200",
-      "200-300",
-      "300-500",
-      "500-2000",
-      "2000-9999",
+      '1-100',
+      '100-200',
+      '200-300',
+      '300-500',
+      '500-2000',
+      '2000-9999',
     ],
   }
   query = qs.parse(
@@ -40,7 +40,7 @@ class SearchGoods extends Component {
   )
   componentDidMount() {
     this.props.getTypeshData()
-    this.props.getSearchData(this.query.kwords, "all")
+    this.props.getSearchData(this.query.kwords, 'all')
   }
   // 排序显示隐藏
   isShowFn = () => {
@@ -50,22 +50,22 @@ class SearchGoods extends Component {
   }
   // 综合排序
   allFn = () => {
-    this.props.getSearchData(this.query.kwords, "all")
+    this.props.getSearchData(this.query.kwords, 'all')
     this.isShowFn()
   }
   // 价格从低到高排序
   upFn = () => {
-    this.props.getSearchData(this.query.kwords, "up")
+    this.props.getSearchData(this.query.kwords, 'up')
     this.isShowFn()
   }
   // 价格从高到低排序
   downFn = () => {
-    this.props.getSearchData(this.query.kwords, "down")
+    this.props.getSearchData(this.query.kwords, 'down')
     this.isShowFn()
   }
   // 销量排序
   salesFn = () => {
-    this.props.getSearchData(this.query.kwords, "sales")
+    this.props.getSearchData(this.query.kwords, 'sales')
   }
   // 返回上一页
   goBack = () => {
@@ -90,8 +90,8 @@ class SearchGoods extends Component {
   }
   // 点击筛选里的确定按钮
   determineBtn = () => {
-    let Interval = this.state.filterpriceData[this.state.priceIndex].split("-")
-    let newArr = JSON.parse(sessionStorage.getItem("search")).filter((v) => {
+    let Interval = this.state.filterpriceData[this.state.priceIndex].split('-')
+    let newArr = JSON.parse(sessionStorage.getItem('search')).filter((v) => {
       return (
         Number(v.price) >= Number(Interval[0]) &&
         Number(v.price) < Number(Interval[1])
@@ -99,6 +99,10 @@ class SearchGoods extends Component {
     })
     this.props.getFilterData(newArr)
     this.maskShowFn()
+  }
+  // 跳转到详情页面
+  toGoodsFn = (gid) => {
+    this.props.history.push(`/goods/shop/${gid}`)
   }
 
   render() {
@@ -119,7 +123,7 @@ class SearchGoods extends Component {
           <p onClick={this.salesFn}>
             <span>销量</span>
           </p>
-          <ul style={{ display: this.state.isShow ? "block" : "none" }}>
+          <ul style={{ display: this.state.isShow ? 'block' : 'none' }}>
             <li onClick={this.allFn}>综合</li>
             <li onClick={this.upFn}>价格从低到高</li>
             <li onClick={this.downFn}>价格从高到低</li>
@@ -127,11 +131,11 @@ class SearchGoods extends Component {
         </div>
         <div className="sea-goods-sec">
           {searchData.length === 0 || searchData instanceof Array === false ? (
-            <p style={{ textAlign: "center", paddingTop: "1rem" }}>暂无数据</p>
+            <p style={{ textAlign: 'center', paddingTop: '1rem' }}>暂无数据</p>
           ) : (
             searchData.map((v) => {
               return (
-                <dl key={v.gid}>
+                <dl key={v.gid} onClick={() => this.toGoodsFn(v.gid)}>
                   <dt>
                     <img src={v.image} alt="" />
                   </dt>
@@ -149,7 +153,7 @@ class SearchGoods extends Component {
         </div>
         <div
           className="goods-mask"
-          style={{ display: this.state.maskShow ? "flex" : "none" }}
+          style={{ display: this.state.maskShow ? 'flex' : 'none' }}
         >
           <div className="mask-shadow" onClick={this.maskShowFn}></div>
           <div className="mask-sec">
@@ -161,7 +165,7 @@ class SearchGoods extends Component {
                     <p
                       key={v.cid}
                       onClick={() => this.currentIndexFn(i)}
-                      className={this.state.currentIndex === i ? "pactive" : ""}
+                      className={this.state.currentIndex === i ? 'pactive' : ''}
                     >
                       {v.title}
                     </p>
@@ -175,7 +179,7 @@ class SearchGoods extends Component {
                     <p
                       key={v}
                       onClick={() => this.priceIndexFn(i)}
-                      className={this.state.priceIndex === i ? "pactive" : ""}
+                      className={this.state.priceIndex === i ? 'pactive' : ''}
                     >
                       {v}
                     </p>

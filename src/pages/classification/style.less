@@ -1,0 +1,98 @@
+.classaction{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  font-size: 0.24rem;
+  a{
+    color: #323232;
+  }
+  a:hover{
+    color: red;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .header{
+    width: 100%;
+    height: 0.8rem;
+    display: flex;
+    .header_Left , .header_Right{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:0.7rem;
+      height: 0.8rem;
+      font-size: 0.3rem;
+    }
+    .header_Center{
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.3rem;
+    }
+  }
+  section{
+    flex: 1;
+    display: flex;
+    overflow: auto;
+    .sec_left{
+      width: 1.4rem;
+      height: 100%;
+      overflow: auto;
+      p{
+        width: 1.4rem;
+        height: 0.8rem;
+        text-align: center;
+        line-height: 0.8rem;
+      }
+    }
+    .sec_left::-webkit-scrollbar{
+      display: none;
+    }
+    .sec_right{
+      flex: 1;
+      overflow: auto;
+      .goods{
+        margin-bottom: 0.3rem;
+        .title{
+          width: 100%;
+          height: 0.5rem;
+          padding-left: 0.2rem;
+          font-size: 0.28rem;
+          line-height: 0.5rem;
+          margin: 0.2rem 0;
+          box-sizing: border-box;
+        }
+        .goodsList{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          dl{
+            width: 33%;
+            dt{
+              width: 100%;
+              height: 1.1rem;
+              overflow: hidden;
+            }
+            dd{
+              width: 100%;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
+            }
+          }
+        }
+      }
+    }
+    .sec_right::-webkit-scrollbar{
+      display: none;
+    }
+  }
+  section::-webkit-scrollbar{
+    display: none;
+  }
+}

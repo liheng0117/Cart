@@ -21,7 +21,7 @@ class Recom extends Component {
           {
             recomList?recomList.map( val => {
               return (
-                <Link to={"/goods/:"+val} key={val.gid}>
+                <Link to={"/goods/shop/"+val.gid} key={val.gid}>
                   <dl>
                     <dt><img src={val.image} alt="" /></dt>
                     <dd>{val.title}</dd>

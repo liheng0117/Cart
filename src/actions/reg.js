@@ -1,15 +1,22 @@
-import axios from 'axios'
-import qs from 'qs'
 import api from '@/services/api'
+import axios from 'axios'
 
-export function isLogin (options) {
-  let status={}
-  axios.post(api.login,qs.stringify(options))
-  .then( res => {
-    res.data.code!==200 ? status=false : status=true
-  } )
+export function isReg(options) {
   return {
-    type: "FETCH_LOGIN_ISREG",
-    payload: status 
+    type: 'FETCH_REG_ISREG',
+    payload: axios.post(api.reg, options),
+  }
+}
+export function getCode(options) {
+  const nowtime = new Date().getTime()
+  return {
+    type: 'FETCH_REG_GETCODE',
+    payload: axios.post(`${api.opcode}&randow=${nowtime}`),
+  }
+}
+export function hashCode(options) {
+  return {
+    type: 'FETCH_REG_HASHCODE',
+    payload: axios.post(api.hashCode, options),
   }
 }

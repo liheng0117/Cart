@@ -1,6 +1,16 @@
-import React from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom"
-import { Search, SearchGoods, Home, Login, Reg, Cart, User, Goods  } from './assembly'
+import React from 'react'
+import {
+  Search,
+  SearchGoods,
+  Home,
+  Login,
+  Reg,
+  Cart,
+  User,
+  Classification,
+  Goods,
+} from './assembly'
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom'
 
 export default class Router extends React.Component {
   render() {
@@ -14,7 +24,10 @@ export default class Router extends React.Component {
           <Route path="/searchgoods" component={SearchGoods} />
           <Route path="/login" component={Login} />
           <Route path="/reg" component={Reg} />
-          <Route path="/goods" component={Goods} />
+          <Route path="/classification" component={Classification} />
+          <Route path="/goods/detail/:gid" component={Goods} />
+          <Route path="/goods/commet/:gid" component={Goods} />
+          <Route path="/goods/shop/:gid" component={Goods} />
           <Redirect path="/" to="/home" />
         </Switch>
       </BrowserRouter>
