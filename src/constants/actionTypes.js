@@ -8,10 +8,10 @@ export const SET_CART_DATA = 'SET_CART_DATA'
 export const ADD_CART_DATA = 'ADD_CART_DATA'
 export const DEL_CART_DATA = 'DEL_CART_DATA'
 // classcation
-export const FETCH_CLASS_LIST = 'ADD_CART_DATA'
-export const FETCH_CLASS_GOODS = 'DEL_CART_DATA'
+export const FETCH_CLASS_LIST = 'FETCH_CLASS_LIST'
+export const FETCH_CLASS_GOODS = 'FETCH_CLASS_GOODS'
 // commet
-export const GET_DETAIL_COMMET = 'DEL_CART_DATA'
+export const GET_DETAIL_COMMET = 'GET_DETAIL_COMMET'
 // home
 export const GET_BANNERLIST = 'GET_BANNERLIST'
 export const GET_NAVLIST = 'GET_NAVLIST'

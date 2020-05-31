@@ -96,7 +96,6 @@ class Cart extends Component {
   toPayFn = () => {
     if (!localStorage.getItem('token')) {
       this.props.history.push('/login')
-    } else {
     }
   }
   //切换页面时把修改后的数据重新给到redux
@@ -107,7 +106,6 @@ class Cart extends Component {
   render() {
     const { allCheck, allPrice, cartList } = this.state
     const { delCart } = this.props
-    // console.log(cartList)
     return (
       <div className="pages-cart">
         <ComHead title="购物车" />

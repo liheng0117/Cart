@@ -2,12 +2,12 @@ const { createProxyMiddleware } = require('http-proxy-middleware')
 
 module.exports = function (app) {
   app.use(
-    createProxyMiddleware('/api', {
+    createProxyMiddleware('/app', {
       target: 'http://vueshop.glbuys.com',
       changeOrigin: true,
       pathRewrite: {
-        '^/api': ''
-      }
-    }),
+        '^/app': '',
+      },
+    })
   )
 }
