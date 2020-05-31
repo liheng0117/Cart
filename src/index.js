@@ -1,14 +1,12 @@
-import React from 'react';
-import ReactDOM from 'react-dom'; //  前端渲染页面
-import { Provider } from 'react-redux';
-import Router from './router';
-import { store } from './store';
-import { persistStore } from 'redux-persist';
-import { PersistGate } from 'redux-persist/lib/integration/react';
-import '@/styles/reset.css';
-import '@/styles/rem'
+import React from 'react'
+import ReactDOM from 'react-dom' //  前端渲染页面
+import { Provider } from 'react-redux'
+import Router from './router'
+import { store } from './store'
+import { persistStore } from 'redux-persist'
+import { PersistGate } from 'redux-persist/lib/integration/react'
 import './utils/rem'
-import './styles/index.less';
+import './styles/index.less'
 import './styles/reset.css'
 
 ReactDOM.render(
@@ -17,5 +15,5 @@ ReactDOM.render(
       <Router />
     </PersistGate>
   </Provider>,
-  document.querySelector("#root")
-);
+  document.querySelector('#root')
+)
