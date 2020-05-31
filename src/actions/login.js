@@ -1,9 +1,10 @@
+import { FETCH_LOGIN_ISLOGIN } from '@/constants/actionTypes'
 import api from '@/services/api'
 import { post } from '@/utils/request'
 
-export function isLogin (options) {
+export function isLogin(options) {
   return {
-    type: "FETCH_LOGIN_ISLOGIN",
-    payload: post(api.login,options) 
+    type: FETCH_LOGIN_ISLOGIN,
+    payload: post(api.login, options),
   }
 }

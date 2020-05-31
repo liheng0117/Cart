@@ -1,3 +1,8 @@
+import {
+  FETCH_REG_ISREG,
+  FETCH_REG_GETCODE,
+  FETCH_REG_HASHCODE,
+} from '@/constants/actionTypes'
 const detState = {
   isReg: false,
   imgSrc: '',
@@ -5,15 +10,15 @@ const detState = {
 }
 export default function login(state = detState, action) {
   switch (action.type) {
-    case 'FETCH_REG_ISREG':
+    case FETCH_REG_ISREG:
       if (action.payload.data.code === 200) {
         return { ...state, isReg: true }
       } else {
         return { ...state, isReg: false }
       }
-    case 'FETCH_REG_GETCODE':
+    case FETCH_REG_GETCODE:
       return { ...state, imgSrc: action.payload.config.url }
-    case 'FETCH_REG_HASHCODE':
+    case FETCH_REG_HASHCODE:
       if (action.payload.data.code === 200) {
         return { ...state, hashCode: true }
       } else {

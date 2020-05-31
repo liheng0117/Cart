@@ -1,9 +1,10 @@
+import { GET_DETAIL_DETAIL } from '@/constants/actionTypes'
 import { get } from '@/utils/request'
 import api from '@/services/api'
 
 export function getdetail(options) {
   return {
-    type: 'GET_DETAIL_DETAIL',
+    type: GET_DETAIL_DETAIL,
     payload: get(`${api.detatil}${options}${api.follow}`),
   }
 }
