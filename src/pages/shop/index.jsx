@@ -104,7 +104,6 @@ class index extends Component {
     const { visable } = this.state
     const { commet } = this.props
     const { num } = this.state
-
     const { size, color } = this.props.size
     return (
       <section>
